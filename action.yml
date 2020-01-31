@@ -1,0 +1,19 @@
+name: Publish Gem Version to Internal Github Package Registry On Tag
+description: Builds and publishes Ruby Gems to the Github Package Registry when Version Tag Pushed
+author: Snapsheet
+branding:
+  color: blue
+  icon: upload-cloud
+inputs:
+  token:
+    description: GITHUB_TOKEN with access to the package registry
+    required: true
+  owner:
+    description: User or organization that owns the package on github
+    required: true
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.owner }}
