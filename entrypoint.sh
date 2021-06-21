@@ -16,6 +16,8 @@ VERSION_TAG=$(echo $GITHUB_REF | cut -d / -f 3)
 GEM_VERSION=$(ruby -e "require 'rubygems'; gemspec = Dir.entries('.').find { |file| file =~ /.*\.gemspec/ }; spec = Gem::Specification::load(gemspec); puts spec.version")
 if [[ $VERSION_TAG != "$GEM_VERSION" ]]; then
   echo "Version tag does not match gem version"
+  echo "Version tag: ${VERSION_TAG}"
+  echo "GEM version: ${GEM_VERSION}" 
   exit 2;
 fi
 
