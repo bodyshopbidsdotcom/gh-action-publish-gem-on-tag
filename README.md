@@ -9,7 +9,7 @@ name: Build and Publish Ruby Gem on Tag Pushes
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - '*.*.*'
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build and Publish Ruby Gem on Tag Pushes
-      uses: bodyshopbidsdotcom/gh-action-publish-gem-on-tag@master
+      uses: bodyshopbidsdotcom/gh-action-publish-gem-on-tag@<latest_release_version>
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         owner: bodyshopbidsdotcom
