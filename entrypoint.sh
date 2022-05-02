@@ -11,6 +11,8 @@ if [[ -z "${OWNER}" ]]; then
   exit 2;
 fi
 
+git config --global --add safe.directory /github/workspace
+
 echo "Verifying the version matches the gem version"
 VERSION_TAG=$(echo $GITHUB_REF | cut -d / -f 3)
 GEM_VERSION=$(ruby -e "require 'rubygems'; gemspec = Dir.entries('.').find { |file| file =~ /.*\.gemspec/ }; spec = Gem::Specification::load(gemspec); puts spec.version")
