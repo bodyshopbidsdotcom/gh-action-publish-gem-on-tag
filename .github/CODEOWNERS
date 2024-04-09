@@ -1,10 +1,2 @@
 # https://help.github.com/en/articles/about-code-owners#codeowners-syntax
-# Site Reliability Engineering (SRE) Reviewers
-*                                                  @bodyshopbidsdotcom/sre
-
-# SRE Owners
-/.github/workflows/pre-release.yml      @bodyshopbidsdotcom/sre
-/action.yml                             @bodyshopbidsdotcom/sre
-Dockerfile                              @bodyshopbidsdotcom/sre
-entrypoint.sh                           @bodyshopbidsdotcom/sre
-README.md                               @bodyshopbidsdotcom/sre
+* @bodyshopbidsdotcom/sre
