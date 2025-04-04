@@ -11,9 +11,13 @@ inputs:
   owner:
     description: User or organization that owns the package on github
     required: true
+  working-directory:
+    description: Directory to run the build and publish in
+    required: false
 runs:
   using: docker
   image: Dockerfile
   args:
     - ${{ inputs.token }}
     - ${{ inputs.owner }}
+    - ${{ inputs.working-directory }}
